@@ -18,6 +18,7 @@ var book2 = {
   Selling_points: 'Created by the author of the "Lord of the Rings" trilogy, this books goes through the adventure of Bilbo Baggins.',
   Price: '$9.28'
 };
+
 var book3 = {
   Picture_url: '<img src=http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,q_80,w_300/MTI5MzY0OTk4NTM0MjQwNzM0.jpg>',
   Title: "<b>The Great Gatsby</b>",
@@ -27,7 +28,6 @@ var book3 = {
   Selling_points: 'In 1922, F. Scott Fitzgerald announced his decision to write "something new--something extraordinary and beautiful and simple + intricately patterned." That extraordinary, beautiful, intricately patterned, and above all, simple novel became The Great Gatsby, arguably Fitzgerald\'s finest work and certainly the book for which he is best known.',
   Price: '$9.34'
 };
-
 
 var album1 = {
   Picture_url: '<img src=http://d817ypd61vbww.cloudfront.net/sites/default/files/styles/media_responsive_widest/public/tile/image/AbbeyRoad.jpg?itok=BgfH98zh>',
@@ -49,19 +49,6 @@ var album2 = {
   Price: '$10.00'
 };
 
-var productsList = [book1, book2, book3, album1, album2];
-
-for (var product in productsList) {
-  for (var key in product) {
-    if (key === 'Title') {
-      $('#book1').append('<p class="booktitle">' + product[key] + '</p>');
-    } else if (key === 'Category') {
-    } else {
-        $('#book1').append('<p>' + product[key] + '</p>');
-    }
-  }
-}
-
 $(document).ready(function() {
   var showButton = $('#showButton');
   var hideButton = $('#hideButton');
@@ -70,13 +57,13 @@ $(document).ready(function() {
   showButton.hide();
 
   showButton.click(function() {
-    productsList.show();
+    productsList.show("slow");
     hideButton.show();
     showButton.hide();
   });
 
   hideButton.click(function() {
-    productsList.hide();
+    productsList.hide("slow");
     showButton.show();
     hideButton.hide();
   });
